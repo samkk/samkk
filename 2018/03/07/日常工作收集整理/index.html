@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="判断传入的参数的类型1234567891011121314function type(arg)&amp;#123;    var t = typeof arg,s;    if(t === &apos;object&apos;)&amp;#123;        if(arg === null)&amp;#123;            return &apos;null&apos;;        &amp;#125;else&amp;#123;            s">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-07T05:36:18.000Z">
+<meta property="og:updated_time" content="2018-03-07T06:39:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="日常工作收集整理">
 <meta name="twitter:description" content="判断传入的参数的类型1234567891011121314function type(arg)&amp;#123;    var t = typeof arg,s;    if(t === &apos;object&apos;)&amp;#123;        if(arg === null)&amp;#123;            return &apos;null&apos;;        &amp;#125;else&amp;#123;            s">
@@ -343,7 +343,7 @@
 
       
         <h3 id="判断传入的参数的类型"><a href="#判断传入的参数的类型" class="headerlink" title="判断传入的参数的类型"></a>判断传入的参数的类型</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">type</span>(<span class="params">arg</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> t = <span class="keyword">typeof</span> arg,s;</span><br><span class="line">    <span class="keyword">if</span>(t === <span class="string">'object'</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arg === <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'null'</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            s = <span class="built_in">Object</span>.prototype.toString.call(arg);</span><br><span class="line">            <span class="comment">//return s.slice(8,s.length-1).toLowerCase();</span></span><br><span class="line">            <span class="keyword">return</span> s.slice(<span class="number">8</span>,<span class="number">-1</span>).toLowerCase();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> t;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="判断IE浏览器版本"><a href="#判断IE浏览器版本" class="headerlink" title="判断IE浏览器版本"></a>判断IE浏览器版本</h3><h4 id="可以判断IE6-7-8-9"><a href="#可以判断IE6-7-8-9" class="headerlink" title="可以判断IE6 7 8 9"></a>可以判断IE6 7 8 9</h4><h4 id="不能判断IE10-11"><a href="#不能判断IE10-11" class="headerlink" title="不能判断IE10 11"></a>不能判断IE10 11</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isIE</span>(<span class="params">ver</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="built_in">document</span>.createElement(<span class="string">"b"</span>);</span><br><span class="line">    b.innerHTML = <span class="string">"&lt;!--[if IE "</span>+ver+<span class="string">"]&gt;&lt;i&gt;&lt;/i&gt;&lt;![end if]--&gt;"</span></span><br><span class="line">    <span class="keyword">return</span> b.getElementsByTagName(<span class="string">'i'</span>).length === <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="判断IE浏览器版本"><a href="#判断IE浏览器版本" class="headerlink" title="判断IE浏览器版本"></a>判断IE浏览器版本</h3><p>可以判断IE6 7 8 9，不能判断IE10 11<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isIE</span>(<span class="params">ver</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="built_in">document</span>.createElement(<span class="string">"b"</span>);</span><br><span class="line">    b.innerHTML = <span class="string">"&lt;!--[if IE "</span>+ver+<span class="string">"]&gt;&lt;i&gt;&lt;/i&gt;&lt;![end if]--&gt;"</span></span><br><span class="line">    <span class="keyword">return</span> b.getElementsByTagName(<span class="string">'i'</span>).length === <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -385,6 +385,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/07/mac生成文件树/" rel="prev" title="mac生成文件树">
+                mac生成文件树 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -461,7 +465,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -472,7 +476,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
@@ -483,7 +487,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -532,7 +536,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#判断传入的参数的类型"><span class="nav-number">1.</span> <span class="nav-text">判断传入的参数的类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断IE浏览器版本"><span class="nav-number">2.</span> <span class="nav-text">判断IE浏览器版本</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#可以判断IE6-7-8-9"><span class="nav-number">2.1.</span> <span class="nav-text">可以判断IE6 7 8 9</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不能判断IE10-11"><span class="nav-number">2.2.</span> <span class="nav-text">不能判断IE10 11</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#判断传入的参数的类型"><span class="nav-number">1.</span> <span class="nav-text">判断传入的参数的类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断IE浏览器版本"><span class="nav-number">2.</span> <span class="nav-text">判断IE浏览器版本</span></a></li></ol></div>
             
 
           </div>

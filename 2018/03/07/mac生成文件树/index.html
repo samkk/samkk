@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="hello," />
+  <meta name="keywords" content="mac,tree,树," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta name="keywords" content="hello">
+<meta name="description" content="默认使用mac下默认是没有tree命令的，不过我们可以使用find命令模拟出tree命令的效果，如显示当前目录的tree的命令： 1find . -print | sed -e &apos;s;[^/]*/;|____;g;s;____|; |;g&apos; 当然你也可以写一个别名来快速执行该命令，运行如下命令，将上面这个命令写到~/.bash_profile里，以后直接运行tree命令就更方便了: 1alias">
+<meta name="keywords" content="mac,tree,树">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/03/07/hello-world/index.html">
+<meta property="og:title" content="mac生成文件树">
+<meta property="og:url" content="http://yoursite.com/2018/03/07/mac生成文件树/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="默认使用mac下默认是没有tree命令的，不过我们可以使用find命令模拟出tree命令的效果，如显示当前目录的tree的命令： 1find . -print | sed -e &apos;s;[^/]*/;|____;g;s;____|; |;g&apos; 当然你也可以写一个别名来快速执行该命令，运行如下命令，将上面这个命令写到~/.bash_profile里，以后直接运行tree命令就更方便了: 1alias">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-07T05:17:13.000Z">
+<meta property="og:updated_time" content="2018-03-07T06:55:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="mac生成文件树">
+<meta name="twitter:description" content="默认使用mac下默认是没有tree命令的，不过我们可以使用find命令模拟出tree命令的效果，如显示当前目录的tree的命令： 1find . -print | sed -e &apos;s;[^/]*/;|____;g;s;____|; |;g&apos; 当然你也可以写一个别名来快速执行该命令，运行如下命令，将上面这个命令写到~/.bash_profile里，以后直接运行tree命令就更方便了: 1alias">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/07/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/07/mac生成文件树/"/>
 
 
 
 
 
-  <title>Hello World | Hexo</title>
+  <title>mac生成文件树 | Hexo</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/mac生成文件树/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="samkk">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">mac生成文件树</h1>
         
 
         <div class="post-meta">
@@ -282,7 +282,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T10:58:07+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T14:48:33+08:00">
                 2018-03-07
               </time>
             
@@ -292,6 +292,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mac/" itemprop="url" rel="index">
+                    <span itemprop="name">mac</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -320,15 +342,13 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h2 id="默认使用"><a href="#默认使用" class="headerlink" title="默认使用"></a>默认使用</h2><p>mac下默认是没有tree命令的，不过我们可以使用find命令模拟出tree命令的效果，如显示当前目录的tree的命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'</span><br></pre></td></tr></table></figure>
+<p>当然你也可以写一个别名来快速执行该命令，运行如下命令，将上面这个命令写到~/.bash_profile里，以后直接运行tree命令就更方便了:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"</span><br></pre></td></tr></table></figure>
+<h2 id="homebrew安装tree命令"><a href="#homebrew安装tree命令" class="headerlink" title="homebrew安装tree命令"></a>homebrew安装tree命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install tree</span><br></pre></td></tr></table></figure>
+<p>这样就在你的mac上安装了 tree 命令行了。</p>
+<h2 id="tree命令行参数"><a href="#tree命令行参数" class="headerlink" title="tree命令行参数"></a>tree命令行参数</h2><h3 id="只实用与安装了tree命令行工具"><a href="#只实用与安装了tree命令行工具" class="headerlink" title="只实用与安装了tree命令行工具"></a>只实用与安装了tree命令行工具</h3><p>-a 显示所有文件和目录。<br>-A 使用ASNI绘图字符显示树状图而非以ASCII字符组合。<br>-C 在文件和目录清单加上色彩，便于区分各种类型。<br>-d 显示目录名称而非内容。<br>-D 列出文件或目录的更改时间。<br>-f 在每个文件或目录之前，显示完整的相对路径名称。<br>-F 在执行文件，目录，Socket，符号连接，管道名称名称，各自加上”*”,”/“,”=”,”@”,”|”号。<br>-g 列出文件或目录的所属群组名称，没有对应的名称时，则显示群组识别码。<br>-i 不以阶梯状列出文件或目录名称。<br>-I 不显示符合范本样式的文件或目录名称。<br>-l 如遇到性质为符号连接的目录，直接列出该连接所指向的原始目录。<br>-n 不在文件和目录清单加上色彩。<br>-N 直接列出文件和目录名称，包括控制字符。<br>-p 列出权限标示。<br>-P 只显示符合范本样式的文件或目录名称。<br>-q 用”?”号取代控制字符，列出文件和目录名称。<br>-s 列出文件或目录大小。<br>-t 用文件和目录的更改时间排序。<br>-u 列出文件或目录的拥有者名称，没有对应的名称时，则显示用户识别码。<br>-x 将范围局限在现行的文件系统中，若指定目录下的某些子目录，其存放于另一个文件系统上，则将该子目录予以排除在寻找范围外。</p>
 
       
     </div>
@@ -346,7 +366,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hello/" rel="tag"># hello</a>
+            <a href="/tags/mac/" rel="tag"># mac</a>
+          
+            <a href="/tags/tree/" rel="tag"># tree</a>
+          
+            <a href="/tags/树/" rel="tag"># 树</a>
           
         </div>
       
@@ -359,15 +383,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/03/07/日常工作收集整理/" rel="next" title="日常工作收集整理">
+                <i class="fa fa-chevron-left"></i> 日常工作收集整理
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/07/日常工作收集整理/" rel="prev" title="日常工作收集整理">
-                日常工作收集整理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -515,7 +539,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#默认使用"><span class="nav-number">1.</span> <span class="nav-text">默认使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#homebrew安装tree命令"><span class="nav-number">2.</span> <span class="nav-text">homebrew安装tree命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tree命令行参数"><span class="nav-number">3.</span> <span class="nav-text">tree命令行参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#只实用与安装了tree命令行工具"><span class="nav-number">3.1.</span> <span class="nav-text">只实用与安装了tree命令行工具</span></a></li></ol></li></ol></div>
             
 
           </div>

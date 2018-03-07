@@ -249,6 +249,154 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/mac生成文件树/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="samkk">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/07/mac生成文件树/" itemprop="url">mac生成文件树</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T14:48:33+08:00">
+                2018-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mac/" itemprop="url" rel="index">
+                    <span itemprop="name">mac</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="默认使用"><a href="#默认使用" class="headerlink" title="默认使用"></a>默认使用</h2><p>mac下默认是没有tree命令的，不过我们可以使用find命令模拟出tree命令的效果，如显示当前目录的tree的命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'</span><br></pre></td></tr></table></figure>
+<p>当然你也可以写一个别名来快速执行该命令，运行如下命令，将上面这个命令写到~/.bash_profile里，以后直接运行tree命令就更方便了:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"</span><br></pre></td></tr></table></figure>
+<h2 id="homebrew安装tree命令"><a href="#homebrew安装tree命令" class="headerlink" title="homebrew安装tree命令"></a>homebrew安装tree命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install tree</span><br></pre></td></tr></table></figure>
+<p>这样就在你的mac上安装了 tree 命令行了。</p>
+<h2 id="tree命令行参数"><a href="#tree命令行参数" class="headerlink" title="tree命令行参数"></a>tree命令行参数</h2><h3 id="只实用与安装了tree命令行工具"><a href="#只实用与安装了tree命令行工具" class="headerlink" title="只实用与安装了tree命令行工具"></a>只实用与安装了tree命令行工具</h3><p>-a 显示所有文件和目录。<br>-A 使用ASNI绘图字符显示树状图而非以ASCII字符组合。<br>-C 在文件和目录清单加上色彩，便于区分各种类型。<br>-d 显示目录名称而非内容。<br>-D 列出文件或目录的更改时间。<br>-f 在每个文件或目录之前，显示完整的相对路径名称。<br>-F 在执行文件，目录，Socket，符号连接，管道名称名称，各自加上”*”,”/“,”=”,”@”,”|”号。<br>-g 列出文件或目录的所属群组名称，没有对应的名称时，则显示群组识别码。<br>-i 不以阶梯状列出文件或目录名称。<br>-I 不显示符合范本样式的文件或目录名称。<br>-l 如遇到性质为符号连接的目录，直接列出该连接所指向的原始目录。<br>-n 不在文件和目录清单加上色彩。<br>-N 直接列出文件和目录名称，包括控制字符。<br>-p 列出权限标示。<br>-P 只显示符合范本样式的文件或目录名称。<br>-q 用”?”号取代控制字符，列出文件和目录名称。<br>-s 列出文件或目录大小。<br>-t 用文件和目录的更改时间排序。<br>-u 列出文件或目录的拥有者名称，没有对应的名称时，则显示用户识别码。<br>-x 将范围局限在现行的文件系统中，若指定目录下的某些子目录，其存放于另一个文件系统上，则将该子目录予以排除在寻找范围外。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/日常工作收集整理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -343,7 +491,7 @@
         
           
             <h3 id="判断传入的参数的类型"><a href="#判断传入的参数的类型" class="headerlink" title="判断传入的参数的类型"></a>判断传入的参数的类型</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">type</span>(<span class="params">arg</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> t = <span class="keyword">typeof</span> arg,s;</span><br><span class="line">    <span class="keyword">if</span>(t === <span class="string">'object'</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arg === <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'null'</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            s = <span class="built_in">Object</span>.prototype.toString.call(arg);</span><br><span class="line">            <span class="comment">//return s.slice(8,s.length-1).toLowerCase();</span></span><br><span class="line">            <span class="keyword">return</span> s.slice(<span class="number">8</span>,<span class="number">-1</span>).toLowerCase();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> t;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="判断IE浏览器版本"><a href="#判断IE浏览器版本" class="headerlink" title="判断IE浏览器版本"></a>判断IE浏览器版本</h3><h4 id="可以判断IE6-7-8-9"><a href="#可以判断IE6-7-8-9" class="headerlink" title="可以判断IE6 7 8 9"></a>可以判断IE6 7 8 9</h4><h4 id="不能判断IE10-11"><a href="#不能判断IE10-11" class="headerlink" title="不能判断IE10 11"></a>不能判断IE10 11</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isIE</span>(<span class="params">ver</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="built_in">document</span>.createElement(<span class="string">"b"</span>);</span><br><span class="line">    b.innerHTML = <span class="string">"&lt;!--[if IE "</span>+ver+<span class="string">"]&gt;&lt;i&gt;&lt;/i&gt;&lt;![end if]--&gt;"</span></span><br><span class="line">    <span class="keyword">return</span> b.getElementsByTagName(<span class="string">'i'</span>).length === <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="判断IE浏览器版本"><a href="#判断IE浏览器版本" class="headerlink" title="判断IE浏览器版本"></a>判断IE浏览器版本</h3><p>可以判断IE6 7 8 9，不能判断IE10 11<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isIE</span>(<span class="params">ver</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="built_in">document</span>.createElement(<span class="string">"b"</span>);</span><br><span class="line">    b.innerHTML = <span class="string">"&lt;!--[if IE "</span>+ver+<span class="string">"]&gt;&lt;i&gt;&lt;/i&gt;&lt;![end if]--&gt;"</span></span><br><span class="line">    <span class="keyword">return</span> b.getElementsByTagName(<span class="string">'i'</span>).length === <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -553,7 +701,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -564,7 +712,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
@@ -575,7 +723,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
