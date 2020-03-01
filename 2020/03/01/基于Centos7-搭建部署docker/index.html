@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="mac,tree,树," />
+  <meta name="keywords" content="docker,Centos7," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="默认使用mac下默认是没有tree命令的，不过我们可以使用find命令模拟出tree命令的效果，如显示当前目录的tree的命令： 1find . -print | sed -e &apos;s;[^/]*/;|____;g;s;____|; |;g&apos; 当然你也可以写一个别名来快速执行该命令，运行如下命令，将上面这个命令写到~/.bash_profile里，以后直接运行tree命令就更方便了: 1alias">
-<meta name="keywords" content="mac,tree,树">
+<meta name="description" content="Docker容器部署与安装查看 Centos7 开发环境：cat /etc/centos-release123[root@centos /]# cat /etc/centos-releaseCentOS Linux release 7.5.1804 (Core) [root@centos /]# 查看 Centos7 内核版本：uname -a 或者 cat /proc/version123[ro">
+<meta name="keywords" content="docker,Centos7">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mac生成文件树">
-<meta property="og:url" content="http://yoursite.com/2018/03/07/mac生成文件树/index.html">
+<meta property="og:title" content="基于Centos7 搭建部署docker">
+<meta property="og:url" content="http://yoursite.com/2020/03/01/基于Centos7-搭建部署docker/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="默认使用mac下默认是没有tree命令的，不过我们可以使用find命令模拟出tree命令的效果，如显示当前目录的tree的命令： 1find . -print | sed -e &apos;s;[^/]*/;|____;g;s;____|; |;g&apos; 当然你也可以写一个别名来快速执行该命令，运行如下命令，将上面这个命令写到~/.bash_profile里，以后直接运行tree命令就更方便了: 1alias">
+<meta property="og:description" content="Docker容器部署与安装查看 Centos7 开发环境：cat /etc/centos-release123[root@centos /]# cat /etc/centos-releaseCentOS Linux release 7.5.1804 (Core) [root@centos /]# 查看 Centos7 内核版本：uname -a 或者 cat /proc/version123[ro">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-07T06:55:21.000Z">
+<meta property="og:updated_time" content="2020-03-01T09:45:08.134Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mac生成文件树">
-<meta name="twitter:description" content="默认使用mac下默认是没有tree命令的，不过我们可以使用find命令模拟出tree命令的效果，如显示当前目录的tree的命令： 1find . -print | sed -e &apos;s;[^/]*/;|____;g;s;____|; |;g&apos; 当然你也可以写一个别名来快速执行该命令，运行如下命令，将上面这个命令写到~/.bash_profile里，以后直接运行tree命令就更方便了: 1alias">
+<meta name="twitter:title" content="基于Centos7 搭建部署docker">
+<meta name="twitter:description" content="Docker容器部署与安装查看 Centos7 开发环境：cat /etc/centos-release123[root@centos /]# cat /etc/centos-releaseCentOS Linux release 7.5.1804 (Core) [root@centos /]# 查看 Centos7 内核版本：uname -a 或者 cat /proc/version123[ro">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/07/mac生成文件树/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/03/01/基于Centos7-搭建部署docker/"/>
 
 
 
 
 
-  <title>mac生成文件树 | Hexo</title>
+  <title>基于Centos7 搭建部署docker | Hexo</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/mac生成文件树/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/01/基于Centos7-搭建部署docker/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="samkk">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">mac生成文件树</h1>
+          <h1 class="post-title" itemprop="name headline">基于Centos7 搭建部署docker</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T14:48:33+08:00">
-                2018-03-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-01T17:01:58+08:00">
+                2020-03-01
               </time>
             
 
@@ -292,28 +292,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mac/" itemprop="url" rel="index">
-                    <span itemprop="name">mac</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -342,14 +320,13 @@
       
 
       
-        <h2 id="默认使用"><a href="#默认使用" class="headerlink" title="默认使用"></a>默认使用</h2><p>mac下默认是没有tree命令的，不过我们可以使用find命令模拟出tree命令的效果，如显示当前目录的tree的命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'</span><br></pre></td></tr></table></figure>
-<p>当然你也可以写一个别名来快速执行该命令，运行如下命令，将上面这个命令写到~/.bash_profile里，以后直接运行tree命令就更方便了:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"</span><br></pre></td></tr></table></figure>
-<h2 id="homebrew安装tree命令"><a href="#homebrew安装tree命令" class="headerlink" title="homebrew安装tree命令"></a>homebrew安装tree命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install tree</span><br></pre></td></tr></table></figure>
-<p>这样就在你的mac上安装了 tree 命令行了。</p>
-<h2 id="tree命令行参数"><a href="#tree命令行参数" class="headerlink" title="tree命令行参数"></a>tree命令行参数</h2><h3 id="只实用与安装了tree命令行工具"><a href="#只实用与安装了tree命令行工具" class="headerlink" title="只实用与安装了tree命令行工具"></a>只实用与安装了tree命令行工具</h3><p>-a 显示所有文件和目录。<br>-A 使用ASNI绘图字符显示树状图而非以ASCII字符组合。<br>-C 在文件和目录清单加上色彩，便于区分各种类型。<br>-d 显示目录名称而非内容。<br>-D 列出文件或目录的更改时间。<br>-f 在每个文件或目录之前，显示完整的相对路径名称。<br>-F 在执行文件，目录，Socket，符号连接，管道名称名称，各自加上”*”,”/“,”=”,”@”,”|”号。<br>-g 列出文件或目录的所属群组名称，没有对应的名称时，则显示群组识别码。<br>-i 不以阶梯状列出文件或目录名称。<br>-I 不显示符合范本样式的文件或目录名称。<br>-l 如遇到性质为符号连接的目录，直接列出该连接所指向的原始目录。<br>-n 不在文件和目录清单加上色彩。<br>-N 直接列出文件和目录名称，包括控制字符。<br>-p 列出权限标示。<br>-P 只显示符合范本样式的文件或目录名称。<br>-q 用”?”号取代控制字符，列出文件和目录名称。<br>-s 列出文件或目录大小。<br>-t 用文件和目录的更改时间排序。<br>-u 列出文件或目录的拥有者名称，没有对应的名称时，则显示用户识别码。<br>-x 将范围局限在现行的文件系统中，若指定目录下的某些子目录，其存放于另一个文件系统上，则将该子目录予以排除在寻找范围外。</p>
-
+        <h3 id="Docker容器部署与安装"><a href="#Docker容器部署与安装" class="headerlink" title="Docker容器部署与安装"></a>Docker容器部署与安装</h3><h4 id="查看-Centos7-开发环境：cat-etc-centos-release"><a href="#查看-Centos7-开发环境：cat-etc-centos-release" class="headerlink" title="查看 Centos7 开发环境：cat /etc/centos-release"></a>查看 Centos7 开发环境：cat /etc/centos-release</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@centos /]# cat /etc/centos-release</span><br><span class="line">CentOS Linux release 7.5.1804 (Core) </span><br><span class="line">[root@centos /]#</span><br></pre></td></tr></table></figure>
+<h3 id="查看-Centos7-内核版本：uname-a-或者-cat-proc-version"><a href="#查看-Centos7-内核版本：uname-a-或者-cat-proc-version" class="headerlink" title="查看 Centos7 内核版本：uname -a 或者 cat /proc/version"></a>查看 Centos7 内核版本：uname -a 或者 cat /proc/version</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@centos /]# uname -a</span><br><span class="line">Linux centos 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux</span><br><span class="line">[root@centos /]#</span><br></pre></td></tr></table></figure>
+<p>基础组件安装：yum -y install gcc &amp; yum -y install gcc-c++<br>卸载历史版本：yum -y remove docker docker-common docker-selinux docker-engine<br>安装依赖包 sudo yum install -y yum-utils device-mapper-persistent-data lvm2<br>添加源，使用了阿里云镜像 sudo yum-config-manager –add-repo <a href="http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo" target="_blank" rel="noopener">http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</a><br>配置缓存 sudo yum makecache fast<br>查看对应版本 yum list docker-ce –showduplicates<br>安装最新稳定版本的docker sudo yum install docker-ce</p>
+<h2 id="然后等待安装完成，到这里基本已经ok，安装好之后就能启动docker"><a href="#然后等待安装完成，到这里基本已经ok，安装好之后就能启动docker" class="headerlink" title="然后等待安装完成，到这里基本已经ok，安装好之后就能启动docker"></a>然后等待安装完成，到这里基本已经ok，安装好之后就能启动docker</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@centos /]# docker version</span><br><span class="line">Client: Docker Engine - Community</span><br><span class="line"> Version:           19.03.6</span><br><span class="line"> API version:       1.40</span><br><span class="line"> Go version:        go1.12.16</span><br><span class="line"> Git commit:        369ce74a3c</span><br><span class="line"> Built:             Thu Feb 13 01:29:29 2020</span><br><span class="line"> OS/Arch:           linux/amd64</span><br><span class="line"> Experimental:      false</span><br><span class="line">Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?</span><br><span class="line">[root@centos /]#</span><br></pre></td></tr></table></figure>
+<h3 id="配置镜像加速器"><a href="#配置镜像加速器" class="headerlink" title="配置镜像加速器"></a>配置镜像加速器</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /etc/docker</span><br><span class="line">sudo tee /etc/docker/daemon.json &lt;&lt;-'EOF'</span><br><span class="line">&#123;</span><br><span class="line">  "registry-mirrors": ["http://hub-mirror.c.163.com"]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
+<h2 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h2><p>国内访问docker太慢，一般会配置加速器，此处配置的加速器是163的加速器，也可以配<a href="https://blog.csdn.net/kozazyh/article/details/79511723" title="阿里云的加速器" target="_blank" rel="noopener">阿里云的加速器</a>。</p>
+<h3 id="下载最新版的docker-compose文件"><a href="#下载最新版的docker-compose文件" class="headerlink" title="下载最新版的docker-compose文件"></a>下载最新版的docker-compose文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@centos /]# sudo curl -L https://github.com/docker/compose/releases/download/1.25.0-rc2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>## 安装的很慢...静静的等待安装完成</span><br><span class="line">[root@centos /]# sudo chmod +x /usr/local/bin/docker-compose</span><br><span class="line">[root@centos /]#</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -366,11 +343,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/mac/" rel="tag"># mac</a>
+            <a href="/tags/docker/" rel="tag"># docker</a>
           
-            <a href="/tags/tree/" rel="tag"># tree</a>
-          
-            <a href="/tags/树/" rel="tag"># 树</a>
+            <a href="/tags/Centos7/" rel="tag"># Centos7</a>
           
         </div>
       
@@ -383,8 +358,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/07/日常工作收集整理/" rel="next" title="日常工作收集整理">
-                <i class="fa fa-chevron-left"></i> 日常工作收集整理
+              <a href="/2018/03/28/JS事件中防抖debounce和节流throttle概念原理的学习/" rel="next" title="JS事件中防抖debounce和节流throttle概念原理的学习">
+                <i class="fa fa-chevron-left"></i> JS事件中防抖debounce和节流throttle概念原理的学习
               </a>
             
           </div>
@@ -392,10 +367,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/28/JS事件中防抖debounce和节流throttle概念原理的学习/" rel="prev" title="JS事件中防抖debounce和节流throttle概念原理的学习">
-                JS事件中防抖debounce和节流throttle概念原理的学习 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -543,7 +514,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#默认使用"><span class="nav-number">1.</span> <span class="nav-text">默认使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#homebrew安装tree命令"><span class="nav-number">2.</span> <span class="nav-text">homebrew安装tree命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tree命令行参数"><span class="nav-number">3.</span> <span class="nav-text">tree命令行参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#只实用与安装了tree命令行工具"><span class="nav-number">3.1.</span> <span class="nav-text">只实用与安装了tree命令行工具</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker容器部署与安装"><span class="nav-number">1.</span> <span class="nav-text">Docker容器部署与安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看-Centos7-开发环境：cat-etc-centos-release"><span class="nav-number">1.1.</span> <span class="nav-text">查看 Centos7 开发环境：cat /etc/centos-release</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看-Centos7-内核版本：uname-a-或者-cat-proc-version"><span class="nav-number">2.</span> <span class="nav-text">查看 Centos7 内核版本：uname -a 或者 cat /proc/version</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#然后等待安装完成，到这里基本已经ok，安装好之后就能启动docker"><span class="nav-number"></span> <span class="nav-text">然后等待安装完成，到这里基本已经ok，安装好之后就能启动docker</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置镜像加速器"><span class="nav-number">1.</span> <span class="nav-text">配置镜像加速器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意："><span class="nav-number"></span> <span class="nav-text">注意：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载最新版的docker-compose文件"><span class="nav-number">1.</span> <span class="nav-text">下载最新版的docker-compose文件</span></a></li></ol></div>
             
 
           </div>

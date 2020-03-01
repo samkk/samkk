@@ -249,6 +249,275 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/01/基于Centos7-搭建部署docker/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="samkk">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/01/基于Centos7-搭建部署docker/" itemprop="url">基于Centos7 搭建部署docker</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-01T17:01:58+08:00">
+                2020-03-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Docker容器部署与安装"><a href="#Docker容器部署与安装" class="headerlink" title="Docker容器部署与安装"></a>Docker容器部署与安装</h3><h4 id="查看-Centos7-开发环境：cat-etc-centos-release"><a href="#查看-Centos7-开发环境：cat-etc-centos-release" class="headerlink" title="查看 Centos7 开发环境：cat /etc/centos-release"></a>查看 Centos7 开发环境：cat /etc/centos-release</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@centos /]# cat /etc/centos-release</span><br><span class="line">CentOS Linux release 7.5.1804 (Core) </span><br><span class="line">[root@centos /]#</span><br></pre></td></tr></table></figure>
+<h3 id="查看-Centos7-内核版本：uname-a-或者-cat-proc-version"><a href="#查看-Centos7-内核版本：uname-a-或者-cat-proc-version" class="headerlink" title="查看 Centos7 内核版本：uname -a 或者 cat /proc/version"></a>查看 Centos7 内核版本：uname -a 或者 cat /proc/version</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@centos /]# uname -a</span><br><span class="line">Linux centos 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux</span><br><span class="line">[root@centos /]#</span><br></pre></td></tr></table></figure>
+<p>基础组件安装：yum -y install gcc &amp; yum -y install gcc-c++<br>卸载历史版本：yum -y remove docker docker-common docker-selinux docker-engine<br>安装依赖包 sudo yum install -y yum-utils device-mapper-persistent-data lvm2<br>添加源，使用了阿里云镜像 sudo yum-config-manager –add-repo <a href="http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo" target="_blank" rel="noopener">http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</a><br>配置缓存 sudo yum makecache fast<br>查看对应版本 yum list docker-ce –showduplicates<br>安装最新稳定版本的docker sudo yum install docker-ce</p>
+<h2 id="然后等待安装完成，到这里基本已经ok，安装好之后就能启动docker"><a href="#然后等待安装完成，到这里基本已经ok，安装好之后就能启动docker" class="headerlink" title="然后等待安装完成，到这里基本已经ok，安装好之后就能启动docker"></a>然后等待安装完成，到这里基本已经ok，安装好之后就能启动docker</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@centos /]# docker version</span><br><span class="line">Client: Docker Engine - Community</span><br><span class="line"> Version:           19.03.6</span><br><span class="line"> API version:       1.40</span><br><span class="line"> Go version:        go1.12.16</span><br><span class="line"> Git commit:        369ce74a3c</span><br><span class="line"> Built:             Thu Feb 13 01:29:29 2020</span><br><span class="line"> OS/Arch:           linux/amd64</span><br><span class="line"> Experimental:      false</span><br><span class="line">Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?</span><br><span class="line">[root@centos /]#</span><br></pre></td></tr></table></figure>
+<h3 id="配置镜像加速器"><a href="#配置镜像加速器" class="headerlink" title="配置镜像加速器"></a>配置镜像加速器</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /etc/docker</span><br><span class="line">sudo tee /etc/docker/daemon.json &lt;&lt;-'EOF'</span><br><span class="line">&#123;</span><br><span class="line">  "registry-mirrors": ["http://hub-mirror.c.163.com"]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
+<h2 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h2><p>国内访问docker太慢，一般会配置加速器，此处配置的加速器是163的加速器，也可以配<a href="https://blog.csdn.net/kozazyh/article/details/79511723" title="阿里云的加速器" target="_blank" rel="noopener">阿里云的加速器</a>。</p>
+<h3 id="下载最新版的docker-compose文件"><a href="#下载最新版的docker-compose文件" class="headerlink" title="下载最新版的docker-compose文件"></a>下载最新版的docker-compose文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@centos /]# sudo curl -L https://github.com/docker/compose/releases/download/1.25.0-rc2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>## 安装的很慢...静静的等待安装完成</span><br><span class="line">[root@centos /]# sudo chmod +x /usr/local/bin/docker-compose</span><br><span class="line">[root@centos /]#</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/28/JS事件中防抖debounce和节流throttle概念原理的学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="samkk">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/28/JS事件中防抖debounce和节流throttle概念原理的学习/" itemprop="url">JS事件中防抖debounce和节流throttle概念原理的学习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-28T16:22:48+08:00">
+                2018-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="函数节流-频繁触发-但只在特定的时间内才执行一次代码"><a href="#函数节流-频繁触发-但只在特定的时间内才执行一次代码" class="headerlink" title="函数节流: 频繁触发,但只在特定的时间内才执行一次代码"></a>函数节流: 频繁触发,但只在特定的时间内才执行一次代码</h2><h2 id="函数防抖-频繁触发-但只在特定的时间内没有触发执行条件才执行一次代码"><a href="#函数防抖-频繁触发-但只在特定的时间内没有触发执行条件才执行一次代码" class="headerlink" title="函数防抖: 频繁触发,但只在特定的时间内没有触发执行条件才执行一次代码"></a>函数防抖: 频繁触发,但只在特定的时间内没有触发执行条件才执行一次代码</h2><h2 id="debounce和throttle介绍"><a href="#debounce和throttle介绍" class="headerlink" title="debounce和throttle介绍"></a>debounce和throttle介绍</h2><p>浏览器的一些事件，如：resize,scroll,keydown,keyup,keypress,mousemove等。这些事件触发频率太过频繁，绑定在这些事件上的回调函数会不停的被调用。这样浏览器的目的是为了保证信息的一致性，而对于我们来说就是一种资源的浪费了。<br>debounce的作用是在让在用户动作停止后延迟多少ms再执行回调。<br>throttle的作用是在用户动作时没隔一定时间（如200ms）执行一次回调。<br>他们两个的共同点就是将多次回调的触发合并成一次执行。这就大大避免了过于频繁的事件回调操作。<br>本质就是将事件回调函数用debounce或throttle包装，事件触发的频率没有改变，只是我们自定义的回调函数的执行频率变低了。这个处理是基于DOM操作是十分巨大的开销。所以如果你的回调函数只是处理一些js的数据，那么用不用防抖和节流处理是一样的。</p>
+<h3 id="debounce实现"><a href="#debounce实现" class="headerlink" title="debounce实现"></a>debounce实现</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">fn, delay</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> delay = delay || <span class="number">200</span>;</span><br><span class="line">    <span class="keyword">var</span> timer;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> th = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">var</span> args = <span class="built_in">arguments</span>;</span><br><span class="line">        <span class="keyword">if</span> (timer) &#123;</span><br><span class="line">            clearTimeout(timer);</span><br><span class="line">        &#125;</span><br><span class="line">        timer = setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                timer = <span class="literal">null</span>;</span><br><span class="line">                fn.apply(th,args);</span><br><span class="line">        &#125;, delay);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="我们使用debounce包装事件回调如下："><a href="#我们使用debounce包装事件回调如下：" class="headerlink" title="我们使用debounce包装事件回调如下："></a>我们使用debounce包装事件回调如下：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dom.addEventListener(<span class="string">"mousemove"</span>,debounce(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//做一些dom操作或者其他的。</span></span><br><span class="line">    .....</span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/mac生成文件树/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -573,7 +842,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -595,7 +864,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -648,7 +917,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

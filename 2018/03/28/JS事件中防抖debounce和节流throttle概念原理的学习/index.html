@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="mac,tree,树," />
+  <meta name="keywords" content="js,debounce,throttle," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="默认使用mac下默认是没有tree命令的，不过我们可以使用find命令模拟出tree命令的效果，如显示当前目录的tree的命令： 1find . -print | sed -e &apos;s;[^/]*/;|____;g;s;____|; |;g&apos; 当然你也可以写一个别名来快速执行该命令，运行如下命令，将上面这个命令写到~/.bash_profile里，以后直接运行tree命令就更方便了: 1alias">
-<meta name="keywords" content="mac,tree,树">
+<meta name="description" content="函数节流: 频繁触发,但只在特定的时间内才执行一次代码函数防抖: 频繁触发,但只在特定的时间内没有触发执行条件才执行一次代码debounce和throttle介绍浏览器的一些事件，如：resize,scroll,keydown,keyup,keypress,mousemove等。这些事件触发频率太过频繁，绑定在这些事件上的回调函数会不停的被调用。这样浏览器的目的是为了保证信息的一致性，而对于我们来">
+<meta name="keywords" content="js,debounce,throttle">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mac生成文件树">
-<meta property="og:url" content="http://yoursite.com/2018/03/07/mac生成文件树/index.html">
+<meta property="og:title" content="JS事件中防抖debounce和节流throttle概念原理的学习">
+<meta property="og:url" content="http://yoursite.com/2018/03/28/JS事件中防抖debounce和节流throttle概念原理的学习/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="默认使用mac下默认是没有tree命令的，不过我们可以使用find命令模拟出tree命令的效果，如显示当前目录的tree的命令： 1find . -print | sed -e &apos;s;[^/]*/;|____;g;s;____|; |;g&apos; 当然你也可以写一个别名来快速执行该命令，运行如下命令，将上面这个命令写到~/.bash_profile里，以后直接运行tree命令就更方便了: 1alias">
+<meta property="og:description" content="函数节流: 频繁触发,但只在特定的时间内才执行一次代码函数防抖: 频繁触发,但只在特定的时间内没有触发执行条件才执行一次代码debounce和throttle介绍浏览器的一些事件，如：resize,scroll,keydown,keyup,keypress,mousemove等。这些事件触发频率太过频繁，绑定在这些事件上的回调函数会不停的被调用。这样浏览器的目的是为了保证信息的一致性，而对于我们来">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-07T06:55:21.000Z">
+<meta property="og:updated_time" content="2018-03-28T08:30:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mac生成文件树">
-<meta name="twitter:description" content="默认使用mac下默认是没有tree命令的，不过我们可以使用find命令模拟出tree命令的效果，如显示当前目录的tree的命令： 1find . -print | sed -e &apos;s;[^/]*/;|____;g;s;____|; |;g&apos; 当然你也可以写一个别名来快速执行该命令，运行如下命令，将上面这个命令写到~/.bash_profile里，以后直接运行tree命令就更方便了: 1alias">
+<meta name="twitter:title" content="JS事件中防抖debounce和节流throttle概念原理的学习">
+<meta name="twitter:description" content="函数节流: 频繁触发,但只在特定的时间内才执行一次代码函数防抖: 频繁触发,但只在特定的时间内没有触发执行条件才执行一次代码debounce和throttle介绍浏览器的一些事件，如：resize,scroll,keydown,keyup,keypress,mousemove等。这些事件触发频率太过频繁，绑定在这些事件上的回调函数会不停的被调用。这样浏览器的目的是为了保证信息的一致性，而对于我们来">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/07/mac生成文件树/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/28/JS事件中防抖debounce和节流throttle概念原理的学习/"/>
 
 
 
 
 
-  <title>mac生成文件树 | Hexo</title>
+  <title>JS事件中防抖debounce和节流throttle概念原理的学习 | Hexo</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/mac生成文件树/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/28/JS事件中防抖debounce和节流throttle概念原理的学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="samkk">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">mac生成文件树</h1>
+          <h1 class="post-title" itemprop="name headline">JS事件中防抖debounce和节流throttle概念原理的学习</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T14:48:33+08:00">
-                2018-03-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-28T16:22:48+08:00">
+                2018-03-28
               </time>
             
 
@@ -305,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mac/" itemprop="url" rel="index">
-                    <span itemprop="name">mac</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -342,13 +342,9 @@
       
 
       
-        <h2 id="默认使用"><a href="#默认使用" class="headerlink" title="默认使用"></a>默认使用</h2><p>mac下默认是没有tree命令的，不过我们可以使用find命令模拟出tree命令的效果，如显示当前目录的tree的命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'</span><br></pre></td></tr></table></figure>
-<p>当然你也可以写一个别名来快速执行该命令，运行如下命令，将上面这个命令写到~/.bash_profile里，以后直接运行tree命令就更方便了:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"</span><br></pre></td></tr></table></figure>
-<h2 id="homebrew安装tree命令"><a href="#homebrew安装tree命令" class="headerlink" title="homebrew安装tree命令"></a>homebrew安装tree命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install tree</span><br></pre></td></tr></table></figure>
-<p>这样就在你的mac上安装了 tree 命令行了。</p>
-<h2 id="tree命令行参数"><a href="#tree命令行参数" class="headerlink" title="tree命令行参数"></a>tree命令行参数</h2><h3 id="只实用与安装了tree命令行工具"><a href="#只实用与安装了tree命令行工具" class="headerlink" title="只实用与安装了tree命令行工具"></a>只实用与安装了tree命令行工具</h3><p>-a 显示所有文件和目录。<br>-A 使用ASNI绘图字符显示树状图而非以ASCII字符组合。<br>-C 在文件和目录清单加上色彩，便于区分各种类型。<br>-d 显示目录名称而非内容。<br>-D 列出文件或目录的更改时间。<br>-f 在每个文件或目录之前，显示完整的相对路径名称。<br>-F 在执行文件，目录，Socket，符号连接，管道名称名称，各自加上”*”,”/“,”=”,”@”,”|”号。<br>-g 列出文件或目录的所属群组名称，没有对应的名称时，则显示群组识别码。<br>-i 不以阶梯状列出文件或目录名称。<br>-I 不显示符合范本样式的文件或目录名称。<br>-l 如遇到性质为符号连接的目录，直接列出该连接所指向的原始目录。<br>-n 不在文件和目录清单加上色彩。<br>-N 直接列出文件和目录名称，包括控制字符。<br>-p 列出权限标示。<br>-P 只显示符合范本样式的文件或目录名称。<br>-q 用”?”号取代控制字符，列出文件和目录名称。<br>-s 列出文件或目录大小。<br>-t 用文件和目录的更改时间排序。<br>-u 列出文件或目录的拥有者名称，没有对应的名称时，则显示用户识别码。<br>-x 将范围局限在现行的文件系统中，若指定目录下的某些子目录，其存放于另一个文件系统上，则将该子目录予以排除在寻找范围外。</p>
+        <h2 id="函数节流-频繁触发-但只在特定的时间内才执行一次代码"><a href="#函数节流-频繁触发-但只在特定的时间内才执行一次代码" class="headerlink" title="函数节流: 频繁触发,但只在特定的时间内才执行一次代码"></a>函数节流: 频繁触发,但只在特定的时间内才执行一次代码</h2><h2 id="函数防抖-频繁触发-但只在特定的时间内没有触发执行条件才执行一次代码"><a href="#函数防抖-频繁触发-但只在特定的时间内没有触发执行条件才执行一次代码" class="headerlink" title="函数防抖: 频繁触发,但只在特定的时间内没有触发执行条件才执行一次代码"></a>函数防抖: 频繁触发,但只在特定的时间内没有触发执行条件才执行一次代码</h2><h2 id="debounce和throttle介绍"><a href="#debounce和throttle介绍" class="headerlink" title="debounce和throttle介绍"></a>debounce和throttle介绍</h2><p>浏览器的一些事件，如：resize,scroll,keydown,keyup,keypress,mousemove等。这些事件触发频率太过频繁，绑定在这些事件上的回调函数会不停的被调用。这样浏览器的目的是为了保证信息的一致性，而对于我们来说就是一种资源的浪费了。<br>debounce的作用是在让在用户动作停止后延迟多少ms再执行回调。<br>throttle的作用是在用户动作时没隔一定时间（如200ms）执行一次回调。<br>他们两个的共同点就是将多次回调的触发合并成一次执行。这就大大避免了过于频繁的事件回调操作。<br>本质就是将事件回调函数用debounce或throttle包装，事件触发的频率没有改变，只是我们自定义的回调函数的执行频率变低了。这个处理是基于DOM操作是十分巨大的开销。所以如果你的回调函数只是处理一些js的数据，那么用不用防抖和节流处理是一样的。</p>
+<h3 id="debounce实现"><a href="#debounce实现" class="headerlink" title="debounce实现"></a>debounce实现</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">fn, delay</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> delay = delay || <span class="number">200</span>;</span><br><span class="line">    <span class="keyword">var</span> timer;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> th = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">var</span> args = <span class="built_in">arguments</span>;</span><br><span class="line">        <span class="keyword">if</span> (timer) &#123;</span><br><span class="line">            clearTimeout(timer);</span><br><span class="line">        &#125;</span><br><span class="line">        timer = setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                timer = <span class="literal">null</span>;</span><br><span class="line">                fn.apply(th,args);</span><br><span class="line">        &#125;, delay);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="我们使用debounce包装事件回调如下："><a href="#我们使用debounce包装事件回调如下：" class="headerlink" title="我们使用debounce包装事件回调如下："></a>我们使用debounce包装事件回调如下：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dom.addEventListener(<span class="string">"mousemove"</span>,debounce(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//做一些dom操作或者其他的。</span></span><br><span class="line">    .....</span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -366,11 +362,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/mac/" rel="tag"># mac</a>
+            <a href="/tags/js/" rel="tag"># js</a>
           
-            <a href="/tags/tree/" rel="tag"># tree</a>
+            <a href="/tags/debounce/" rel="tag"># debounce</a>
           
-            <a href="/tags/树/" rel="tag"># 树</a>
+            <a href="/tags/throttle/" rel="tag"># throttle</a>
           
         </div>
       
@@ -383,8 +379,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/07/日常工作收集整理/" rel="next" title="日常工作收集整理">
-                <i class="fa fa-chevron-left"></i> 日常工作收集整理
+              <a href="/2018/03/07/mac生成文件树/" rel="next" title="mac生成文件树">
+                <i class="fa fa-chevron-left"></i> mac生成文件树
               </a>
             
           </div>
@@ -393,8 +389,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/28/JS事件中防抖debounce和节流throttle概念原理的学习/" rel="prev" title="JS事件中防抖debounce和节流throttle概念原理的学习">
-                JS事件中防抖debounce和节流throttle概念原理的学习 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/03/01/基于Centos7-搭建部署docker/" rel="prev" title="基于Centos7 搭建部署docker">
+                基于Centos7 搭建部署docker <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -543,7 +539,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#默认使用"><span class="nav-number">1.</span> <span class="nav-text">默认使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#homebrew安装tree命令"><span class="nav-number">2.</span> <span class="nav-text">homebrew安装tree命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tree命令行参数"><span class="nav-number">3.</span> <span class="nav-text">tree命令行参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#只实用与安装了tree命令行工具"><span class="nav-number">3.1.</span> <span class="nav-text">只实用与安装了tree命令行工具</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数节流-频繁触发-但只在特定的时间内才执行一次代码"><span class="nav-number">1.</span> <span class="nav-text">函数节流: 频繁触发,但只在特定的时间内才执行一次代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数防抖-频繁触发-但只在特定的时间内没有触发执行条件才执行一次代码"><span class="nav-number">2.</span> <span class="nav-text">函数防抖: 频繁触发,但只在特定的时间内没有触发执行条件才执行一次代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#debounce和throttle介绍"><span class="nav-number">3.</span> <span class="nav-text">debounce和throttle介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#debounce实现"><span class="nav-number">3.1.</span> <span class="nav-text">debounce实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我们使用debounce包装事件回调如下："><span class="nav-number">3.2.</span> <span class="nav-text">我们使用debounce包装事件回调如下：</span></a></li></ol></li></ol></div>
             
 
           </div>
