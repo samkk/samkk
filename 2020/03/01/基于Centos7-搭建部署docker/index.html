@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Docker容器部署与安装查看 Centos7 开发环境：cat /etc/centos-release123[root@centos /]# cat /etc/centos-releaseCentOS Linux release 7.5.1804 (Core) [root@centos /]# 查看 Centos7 内核版本：uname -a 或者 cat /proc/version123[ro">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-01T09:45:08.134Z">
+<meta property="og:updated_time" content="2020-03-02T16:03:32.848Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于Centos7 搭建部署docker">
 <meta name="twitter:description" content="Docker容器部署与安装查看 Centos7 开发环境：cat /etc/centos-release123[root@centos /]# cat /etc/centos-releaseCentOS Linux release 7.5.1804 (Core) [root@centos /]# 查看 Centos7 内核版本：uname -a 或者 cat /proc/version123[ro">
@@ -293,6 +293,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -327,6 +349,22 @@
 <h3 id="配置镜像加速器"><a href="#配置镜像加速器" class="headerlink" title="配置镜像加速器"></a>配置镜像加速器</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /etc/docker</span><br><span class="line">sudo tee /etc/docker/daemon.json &lt;&lt;-'EOF'</span><br><span class="line">&#123;</span><br><span class="line">  "registry-mirrors": ["http://hub-mirror.c.163.com"]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
 <h2 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h2><p>国内访问docker太慢，一般会配置加速器，此处配置的加速器是163的加速器，也可以配<a href="https://blog.csdn.net/kozazyh/article/details/79511723" title="阿里云的加速器" target="_blank" rel="noopener">阿里云的加速器</a>。</p>
 <h3 id="下载最新版的docker-compose文件"><a href="#下载最新版的docker-compose文件" class="headerlink" title="下载最新版的docker-compose文件"></a>下载最新版的docker-compose文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@centos /]# sudo curl -L https://github.com/docker/compose/releases/download/1.25.0-rc2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>## 安装的很慢...静静的等待安装完成</span><br><span class="line">[root@centos /]# sudo chmod +x /usr/local/bin/docker-compose</span><br><span class="line">[root@centos /]#</span><br></pre></td></tr></table></figure>
+<h4 id="简单的操作下docker"><a href="#简单的操作下docker" class="headerlink" title="简单的操作下docker"></a>简单的操作下docker</h4><h5 id="下载最新的nginx包"><a href="#下载最新的nginx包" class="headerlink" title="下载最新的nginx包"></a>下载最新的nginx包</h5><p>docker pull nginx</p>
+<h5 id="nginx端口映射"><a href="#nginx端口映射" class="headerlink" title="nginx端口映射"></a>nginx端口映射</h5><p>docker run -d -p 80:80 nginx</p>
+<h5 id="运行容器另外一种方法"><a href="#运行容器另外一种方法" class="headerlink" title="运行容器另外一种方法"></a>运行容器另外一种方法</h5><p>docker run –rm -idt -p 8991:8991 -p 8992:8992 main:v1 运行容器, 成功后可以通过docker container ls 查看到<br>-itd 分别是让容器的标准输入保持打开，展开终端，后台运行<br>-p 为主机和docker容器的ip映射，主机8991端口对应容器开放的8991,8992对8992<br>-rm 容器停止时，自动销毁</p>
+<h5 id="管理容器"><a href="#管理容器" class="headerlink" title="管理容器"></a>管理容器</h5><p>docker exec -t [id] bash</p>
+<h5 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h5><p>docker rm -f [id]</p>
+<h5 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h5><p>docker commit [id] [name]</p>
+<h5 id="编辑Dockerfile"><a href="#编辑Dockerfile" class="headerlink" title="编辑Dockerfile"></a>编辑Dockerfile</h5><p>vim Dockerfile<br>FROM nginx<br>ADD ./ /usr/share/nginx/html</p>
+<p>docker build -t nginx81 .</p>
+<h5 id="保存docker"><a href="#保存docker" class="headerlink" title="保存docker"></a>保存docker</h5><p>docker save nginx81 &gt;1.tar</p>
+<h5 id="导入docker"><a href="#导入docker" class="headerlink" title="导入docker"></a>导入docker</h5><p>docker load &lt; 1.tar</p>
+<h5 id="删除-1"><a href="#删除-1" class="headerlink" title="删除"></a>删除</h5><p>docker rmi nginx81<br>docker image rm [imageName]</p>
+<p>部署golang<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">FROM golang</span><br><span class="line">MAINTAINER "kksam(1011847054@qq.com)"</span><br><span class="line">WORKDIR /go/src/http-fake</span><br><span class="line">ADD . /go/src/http-fake</span><br><span class="line">ENV GOPROXY=https://goproxy.cn</span><br><span class="line">RUN go build .</span><br><span class="line"></span><br><span class="line">EXPOSE 8810</span><br><span class="line">ENTRYPOINT ["./http-fake"]</span><br></pre></td></tr></table></figure></p>
+<p>配置nginx挂载文件<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker run --name nginx81 -p 80:80 -v /etc/docker/nginx/conf.d:/etc/nginx/conf.d -d nginx</span><br><span class="line"></span><br><span class="line">docker restart nginx81</span><br></pre></td></tr></table></figure></p>
+<p>这是nginx转发的配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    </span><br><span class="line">    listen 80;</span><br><span class="line">    server_name localhost;</span><br><span class="line"></span><br><span class="line">    location / </span><br><span class="line">    &#123;</span><br><span class="line">        proxy_redirect off;</span><br><span class="line">        proxy_set_header Host $host;</span><br><span class="line">        proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">        proxy_pass http://localhost:8810; #使用你的代理ip地址</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>千辛万苦终于使用nginx转发到80端口…是不能使用宿主机的127.0.0.1<br>而是要去容器的ip可以通过下面命令查看docker容器ip<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker inspect -f '&#123;&#123;range .NetworkSettings.Networks&#125;&#125;&#123;&#123;.IPAddress&#125;&#125;&#123;&#123;end&#125;&#125;' container_name_or_id</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     
@@ -454,7 +492,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -514,7 +552,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker容器部署与安装"><span class="nav-number">1.</span> <span class="nav-text">Docker容器部署与安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看-Centos7-开发环境：cat-etc-centos-release"><span class="nav-number">1.1.</span> <span class="nav-text">查看 Centos7 开发环境：cat /etc/centos-release</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看-Centos7-内核版本：uname-a-或者-cat-proc-version"><span class="nav-number">2.</span> <span class="nav-text">查看 Centos7 内核版本：uname -a 或者 cat /proc/version</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#然后等待安装完成，到这里基本已经ok，安装好之后就能启动docker"><span class="nav-number"></span> <span class="nav-text">然后等待安装完成，到这里基本已经ok，安装好之后就能启动docker</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置镜像加速器"><span class="nav-number">1.</span> <span class="nav-text">配置镜像加速器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意："><span class="nav-number"></span> <span class="nav-text">注意：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载最新版的docker-compose文件"><span class="nav-number">1.</span> <span class="nav-text">下载最新版的docker-compose文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker容器部署与安装"><span class="nav-number">1.</span> <span class="nav-text">Docker容器部署与安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看-Centos7-开发环境：cat-etc-centos-release"><span class="nav-number">1.1.</span> <span class="nav-text">查看 Centos7 开发环境：cat /etc/centos-release</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看-Centos7-内核版本：uname-a-或者-cat-proc-version"><span class="nav-number">2.</span> <span class="nav-text">查看 Centos7 内核版本：uname -a 或者 cat /proc/version</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#然后等待安装完成，到这里基本已经ok，安装好之后就能启动docker"><span class="nav-number"></span> <span class="nav-text">然后等待安装完成，到这里基本已经ok，安装好之后就能启动docker</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置镜像加速器"><span class="nav-number">1.</span> <span class="nav-text">配置镜像加速器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意："><span class="nav-number"></span> <span class="nav-text">注意：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载最新版的docker-compose文件"><span class="nav-number">1.</span> <span class="nav-text">下载最新版的docker-compose文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简单的操作下docker"><span class="nav-number">1.1.</span> <span class="nav-text">简单的操作下docker</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#下载最新的nginx包"><span class="nav-number">1.1.1.</span> <span class="nav-text">下载最新的nginx包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#nginx端口映射"><span class="nav-number">1.1.2.</span> <span class="nav-text">nginx端口映射</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#运行容器另外一种方法"><span class="nav-number">1.1.3.</span> <span class="nav-text">运行容器另外一种方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#管理容器"><span class="nav-number">1.1.4.</span> <span class="nav-text">管理容器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#删除"><span class="nav-number">1.1.5.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#创建"><span class="nav-number">1.1.6.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#编辑Dockerfile"><span class="nav-number">1.1.7.</span> <span class="nav-text">编辑Dockerfile</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#保存docker"><span class="nav-number">1.1.8.</span> <span class="nav-text">保存docker</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#导入docker"><span class="nav-number">1.1.9.</span> <span class="nav-text">导入docker</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#删除-1"><span class="nav-number">1.1.10.</span> <span class="nav-text">删除</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
